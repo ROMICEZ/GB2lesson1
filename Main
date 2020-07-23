@@ -1,0 +1,28 @@
+package GB_2_lesson1;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Competitor[] competitors = {new Human("Роман"), new Cat("Цезарь"), new Robot("Робокоп")};
+        Obstacle[] obstacles = {new RoadTrack(800), new Wall(7)};
+
+        Team team = new Team("Мстители \n", competitors);
+
+        System.out.println("\n******Новая команда******\n");
+        System.out.println(team.getTeamName());
+
+        System.out.println("\n******Готовность команды******\n");
+        team.showResults();
+
+        Course course = new Course(obstacles); 
+
+        System.out.println("\n******Команда идет на препятсвие******\n ");
+        course.doIt(team);
+
+        System.out.println("\n******Результаты команды******\n");
+        team.showResults();
+
+        System.out.println("\n******Команда закончила препятствие******\n");
+        team.showMembersFinishedCourse();
+    }
+}
